@@ -1,0 +1,17 @@
+<?php include APPPATH.'views/tpl.header.phtml';?>
+
+<div>
+    <h4>XX美图管理后台</h4>
+</div>
+
+<ul>
+    <?php
+        foreach ($leimu as $n => $u) {
+    ?>
+       <li><a href="<?php echo $u?>" target="content"><?php echo $n?></a></li>
+    <?php
+        }
+    ?>
+</ul>
+
+<?php include APPPATH.'views/tpl.footer.phtml';?>

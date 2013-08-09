@@ -1,0 +1,37 @@
+<?php include APPPATH . 'views/tpl.header.phtml';?>
+
+<ul class="nav nav-tabs">
+    <li class="active">
+        <a href="/index.php?c=leimu&a=leimulist">类目列表</a>
+    </li>
+    <li>
+        <a href="/index.php?c=leimu&a=addleimu">添加类目</a>
+    </li>
+</ul>
+
+<table class="table table-striped">
+    <tr>
+        <th>类目ID</th>
+        <th>类目父ID</th>
+        <th>类目名称</th>
+        <th>状态</th>
+        <th>操作</th>
+    </tr>
+    <?php
+        foreach ($leimuList as $list) {
+    ?>
+            <tr>
+                <td><?php echo $list['lid']?></td>
+                <td><?php echo $list['pid']?></td>
+                <td><?php echo $list['lname']?></td>
+                <td><?php echo $list['status']?></td>
+                <td><a href="/index.php?c=leimu&a=edit&lid=<?php echo $list['lid']?>">编辑</a> |
+                    <a href="/index.php?c=leimu&a=del&lid=<?php echo $list['lid']?>">删除</a>
+                </td>
+            </tr>
+    <?php
+        }
+    ?>
+</table>
+
+<?php include APPPATH . 'views/tpl.footer.phtml';?>
