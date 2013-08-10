@@ -19,16 +19,15 @@ class index extends base {
     public function left(){
         $leimu = array(
             '类目管理' => '/index.php?c=leimu&a=leimulist',
-            '来源管理' => '/index.php?c=index&a=laiyuan',
-            '图片管理' => '/index.php?c=index&a=tupian',
+            '来源管理' => '/index.php?c=laiyuan&a=index',
+            '图片管理' => '/index.php?c=tupian&a=index',
         );
         $data['leimu'] = $leimu;
         $this->views(__CLASS__.'/'.__FUNCTION__, $data);
     }
 
     public function content() {
-        echo '欢迎使用XX美图后台管理系统';
-        exit();
+        $this->views(__CLASS__.'/'.__FUNCTION__);
     }
 
 }

@@ -1,20 +1,14 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: WEIWEI
- * Date: 13-8-10
- * Time: 上午7:39
- * To change this template use File | Settings | File Templates.
- */
 
-class leimuModel extends DB {
-    public $table = 'leimu';
+class laiyuanModel extends DB {
+	public $table = 'picyuan';
+  public $table2 = 'picyuanlei';
 
-    public function __construct() {
-        parent::__construct();
-    }
+	public function __construct() {
+		parent::__construct();
+	}
 
-    public function flist($where = '', $order = '', $limit = '') {
+	public function flist($where = '', $order = '', $limit = '') {
         return parent::flist($this->table, $where, $order, $limit);
     }
 
@@ -33,4 +27,16 @@ class leimuModel extends DB {
     public function del($where) {
         return parent::del($this->table, $where);
     }
+
+  public function addSubLei($data) {
+    return parent::insert($this->table2, $data);
+  }
+
+  public function getSubLei($where) {
+    return parent::flist($this->table2, $where);
+  }
+
+  public function delSubLei($where) {
+    return parent::del($this->table2, $where);
+  }
 }

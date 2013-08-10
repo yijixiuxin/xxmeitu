@@ -1,0 +1,39 @@
+<?php include APPPATH . 'views/tpl.header.phtml';?>
+
+<ul class="nav nav-tabs">
+    <li class="active">
+        <a href="/index.php?c=laiyuan&a=index">来源列表</a>
+    </li>
+    <li>
+        <a href="/index.php?c=laiyuan&a=addlaiyuan">添加来源</a>
+    </li>
+</ul>
+
+<table class="table table-striped">
+    <tr>
+        <th>来源ID</th>
+        <th>来源名称</th>
+        <th>来源URL</th>
+        <th>处理来源的CLASS</th>
+        <th>状态</th>
+        <th>操作</th>
+    </tr>
+    <?php
+        foreach ($laiyuanList as $list) {
+    ?>
+            <tr>
+                <td><?php echo $list['yid']?></td>
+                <td><?php echo $list['name']?></td>
+                <td><?php echo $list['url']?></td>
+                <td><?php echo $list['class']?></td>
+                <td><?php echo $list['status']?></td>
+                <td><a href="/index.php?c=laiyuan&a=editlaiyuan&yid=<?php echo $list['yid']?>">编辑</a> |
+                    <a href="/index.php?c=laiyuan&a=dellaiyuan&yid=<?php echo $list['yid']?>">删除</a>
+                </td>
+            </tr>
+    <?php
+        }
+    ?>
+</table>
+
+<?php include APPPATH . 'views/tpl.footer.phtml';?>

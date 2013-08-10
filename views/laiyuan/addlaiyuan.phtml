@@ -1,0 +1,56 @@
+<?php include APPPATH . 'views/tpl.header.phtml'; ?>
+
+
+  <ul class="nav nav-tabs">
+    <li>
+      <a href="/index.php?c=laiyuan&a=index">来源列表</a>
+    </li>
+    <li class="active">
+      <a href="/index.php?c=laiyuan&a=addlaiyuan">添加来源</a>
+    </li>
+  </ul>
+
+  <form method="post" action="">
+    <fieldset>
+      <legend>来源添加</legend>
+      <label>来源名称</label>
+      <input type="text" name="name" placeholder="请输入来源名称">
+      <span class="help-block">请输入来源名称.</span>
+      <label>来源URL</label>
+      <input type="text" name="url" placeholder="请输入来源URL">
+      <span class="help-block">请输入来源URL.</span>
+      <label>处理来源的CLASS</label>
+      <input type="text" name="class" value="" placeholder="请输入处理来源的CLASS"/>
+      <span class="help-block">指定class对源进行处理.</span>
+      <label>状态</label>
+      <label><input type="radio" name="status" value="1" checked/> 启用</label>
+      <label><input type="radio" name="status" value="0"/> 禁用</label>
+      <br/>
+      <button type="button" class="btn" id="addSub">添加子类</button>
+      <table class="table" id="zilei">
+        <tr><th>类目URL</th><th>所属分类</th><th>处理方法</th><th>状态</th><th>操作</th></tr>
+      </table>
+
+      <button type="submit" class="btn btn-primary">添加</button>
+    </fieldset>
+  </form>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#addSub').click(function(){
+      var subHtml = '<tr><td><input type="text" name="lurl[]" /></td>' +
+          '<td><select name="lid[]">' +
+          '<?php foreach ($leimuList as $list) {echo "<option value=\"{$list['lid']}\">{$list['lname']}</option>";}?>'+
+          '</select></td><td><input type="text" name="func[]" /></td>' +
+          '<td><input type="text" name="lstatus[]" /></td>' +
+          '<td><button type="button" class="btn" onclick="delsub(this)">删除</button></td></tr>';
+      $('#zilei').append(subHtml);
+    });
+  });
+
+  function delsub(e) {
+    $(e).parents('tr').remove();
+  }
+</script>
+
+<?php include APPPATH . 'views/tpl.footer.phtml' ?>

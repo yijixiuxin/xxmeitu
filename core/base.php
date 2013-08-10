@@ -56,7 +56,7 @@ class base {
     }
 
     public function showMsg($msg, $url = '') {
-        header('Content-type:text/html;charset:utf8;');
+        header("Content-Type:text/html; charset=utf-8");
         echo '<html>';
         echo '<head><title>消息提示</title></head>';
         echo '<body>';

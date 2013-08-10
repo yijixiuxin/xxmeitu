@@ -6,6 +6,7 @@ include APPPATH.'conf/config.php';
 include APPPATH.'core/base.php';
 include APPPATH.'core/db.php';
 include APPPATH.'func/global.php';
+include APPPATH.'func/image.php';
 
 $c = isset($_GET['c']) ? $_GET['c'] : 'index';
 $a = isset($_GET['a']) ? $_GET['a'] : 'index';

@@ -14,6 +14,7 @@
         <th>类目ID</th>
         <th>类目父ID</th>
         <th>类目名称</th>
+        <th>排序</th>
         <th>状态</th>
         <th>操作</th>
     </tr>
@@ -24,9 +25,10 @@
                 <td><?php echo $list['lid']?></td>
                 <td><?php echo $list['pid']?></td>
                 <td><?php echo $list['lname']?></td>
+                <td><?php echo $list['ob']?></td>
                 <td><?php echo $list['status']?></td>
-                <td><a href="/index.php?c=leimu&a=edit&lid=<?php echo $list['lid']?>">编辑</a> |
-                    <a href="/index.php?c=leimu&a=del&lid=<?php echo $list['lid']?>">删除</a>
+                <td><a href="/index.php?c=leimu&a=editleimu&lid=<?php echo $list['lid']?>">编辑</a> |
+                    <a href="/index.php?c=leimu&a=delleimu&lid=<?php echo $list['lid']?>">删除</a>
                 </td>
             </tr>
     <?php
