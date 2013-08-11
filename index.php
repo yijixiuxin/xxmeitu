@@ -5,6 +5,7 @@ define("APPPATH", __DIR__.'/');
 include APPPATH.'conf/config.php';
 include APPPATH.'core/base.php';
 include APPPATH.'core/db.php';
+include APPPATH.'core/img.php';
 include APPPATH.'func/global.php';
 include APPPATH.'func/image.php';
 

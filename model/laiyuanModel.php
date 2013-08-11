@@ -2,7 +2,6 @@
 
 class laiyuanModel extends DB {
 	public $table = 'picyuan';
-  public $table2 = 'picyuanlei';
 
 	public function __construct() {
 		parent::__construct();
@@ -27,16 +26,4 @@ class laiyuanModel extends DB {
     public function del($where) {
         return parent::del($this->table, $where);
     }
-
-  public function addSubLei($data) {
-    return parent::insert($this->table2, $data);
-  }
-
-  public function getSubLei($where) {
-    return parent::flist($this->table2, $where);
-  }
-
-  public function delSubLei($where) {
-    return parent::del($this->table2, $where);
-  }
 }
